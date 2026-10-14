@@ -32,7 +32,7 @@ Rule layer (rules.py)           ->  LOW / CONCERNING / HIGH
 Reply (LLM, safety_guide.md + level + mode + tags found)
 ```
 
-1. **Tagger.** Each new message is sent with recent context to the tagger prompt. It returns JSON only: a list of tags and whether the adult is pushing a topic the child already refused. If the tagger fails, the app falls back to no tags instead of crashing.
+1. **Tagger.** Every time a new message comes in, the AI reads it together with the last few messages before it. It does one job: mark which warning signs are in the message (for example "asked to keep it secret" or "asked for a photo"). It also marks whether the adult is pushing again on something the child already said no to. It only labels the message. It does not judge how risky the chat is and does not reply. If the tagger fails, the app treats the message as having no warning signs, so it keeps running instead of crashing.
 2. **Rule layer.** `assess()` goes through the whole chat history and returns a level. Main rules:
    - Any HIGH tag (threat, blackmail, money demand, photo request, meeting request, child expressing fear, pressure after a photo was sent, sexual content sent, child seeing it as a relationship) makes the level HIGH.
    - Asking to hide the chat from parents after the child already refused is HIGH.
