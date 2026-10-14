@@ -13,8 +13,8 @@ Safe Space is a safety companion for children and teens in India, and for the si
 - **Risk level from code, not from the LLM.** A rule layer in `rules.py` sets the level (LOW, CONCERNING or HIGH). The LLM never decides the level, so it stays predictable and easy to inspect.
 - **Context-aware.** Two setup questions (how much older is the other person, and is the person a teacher, coach or someone in charge) change how the rules score the chat.
 - **Live safety panel.** A sidebar shows the current risk badge, a plain-language list of the warning signs found, and a "Need help now?" box that opens by itself at HIGH.
-- **Blackmail Rescue screen.** If a child in victim mode describes threats, blackmail, a money demand, sexual material or a direct photo request, the app switches to a short guided flow. It never asks for the image, never asks "did you send it?" and has an "I don't want to say" option. It gives evidence steps and reporting routes.
-- **Replies that match the child's situation.** Tone changes by level: gentle and curious for CONCERNING, calm and short for HIGH.
+- **Blackmail Rescue screen.** If a child in victim mode describes threats, blackmail, a money demand, sexual material or a direct photo request, the app switches to a short guided flow. The child never has to upload or describe the image, and can skip saying whether they sent one. Every answer gets the same steps: keep the evidence, don't pay, don't forward the image, and call 1930, Childline 1098 or a trusted adult.
+- **Replies that match the child's situation.** Tone changes by level: gentle and curious for CONCERNING, calm and direct for HIGH.
 - **Real people first.** The bot never replaces a person. Replies point to a ladder of people (a sibling, an aunt or uncle, a school counselor), Childline 1098, the police and the cyber helpline.
 
 ## How it works
@@ -91,7 +91,7 @@ The `chats/` folder has fictional chats written to cover different grooming path
 ├── rules.py             Rule layer that sets the risk level
 ├── safety_guide.md      System prompt for replies
 ├── tagger_prompt.md     Prompt for the tagging step
-├── requirements.txt
+├── requirements.txt     Python dependencies
 └── chats/               Fictional test scenarios
 ```
 
