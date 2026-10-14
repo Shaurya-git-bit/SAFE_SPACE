@@ -4,6 +4,8 @@
 
 Safe Space is a safety companion for children and teens in India, and for the siblings, friends and parents who notice something is wrong. It reads a chat or a description, spots grooming and blackmail patterns, rates the risk, and gives small next steps the child can actually take.
 
+> **Early warning in real time.** Paste a chat while it's still going on. The safety box adapts with every message, and the risk level only goes up within a session, so a warning sign never disappears once it's spotted.
+
 ## What it does
 
 - **Three modes.** The app starts by asking who is using it: the child (victim), a sibling or friend, or a parent. Greetings, warnings and advice change for each.
@@ -40,6 +42,8 @@ Reply (LLM, safety_guide.md + level + mode + tags found)
    - A warning sign repeated after the child said no counts as extra pressure.
    - The level never goes down within a session.
 3. **Reply.** The reply model gets the safety guide plus runtime context: mode, risk level, tags found so far and the tone for that level. It answers in the language the user writes in.
+
+Both the tagger and the reply use `gemini-3.5-flash-lite` through the Gemini API.
 
 ## The safety guide
 
